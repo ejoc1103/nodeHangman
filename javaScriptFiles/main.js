@@ -16,14 +16,14 @@ game = {
  	guessesRemaining: 10,
  	currentWrd: null,
  	
- 	startGame: function (wrd) {
- 		this.resetGuesses();
+ 	startGame: function (word) {
+ 		this.reset();
  		this.currentWrd = new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
  		this.currentWrd.pickLetter();
  		this.promptUser();
  	},
 
- 	resetGuesses: function(){
+ 	reset: function(){
  		this.guessesRemaining = 10;
  	},
 
@@ -33,7 +33,7 @@ game = {
  			console.log("You guessed: " + result.guessLet);
  			var manyGuessed = self.currentWrd.checkLetter(result.guessLet);
 
- 			if(manyGuessed ==0) {
+ 			if(manyGuessed === 0) {
  				console.log("WRONG");
  				self.guessesRemaining--;
  				
@@ -48,10 +48,10 @@ game = {
 
  			console.log("Guesses remaining: " + self.guessesRemaining);
  			console.log("-------------------");
- 			if((self.guessesRemaining > 0) && (self.currentWrd.found == false)){
+ 			if((self.guessesRemaining > 0) && (self.currentWrd.found === false)){
  				self.promptUser();
  			}
- 			else if(self.guessesRemaining ==0){
+ 			else if(self.guessesRemaining === 0){
  				console.log("Game over. Correct Word ", self.currentWrd.target);
  			} else {
  				console.log(self.currentWrd.wordRender());

@@ -1,4 +1,4 @@
-var letter = require('./letter.js');
+var lets = require('./letter.js');
 
 function Word(target) {
 	this.target = target;
@@ -7,7 +7,7 @@ function Word(target) {
 
 	this.pickLetter = function() {
 		for (var i=0; i < this.target.length; i++) {
-			this.lets.push( new letter(this.target[i]));
+			this.lets.push( new lets(this.target[i]));
 		}
 	};
 
@@ -22,7 +22,7 @@ function Word(target) {
 		var toReturn = 0;
 
 		for (var i = 0; i < this.lets.length; i++) {
-			if (this.lets[i].charac == guessLetter){
+			if (this.lets[i].charac === guessLetter){
 				this.lets[i].appear = true;
 				toReturn++;
 			}

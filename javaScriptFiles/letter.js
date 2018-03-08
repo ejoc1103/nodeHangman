@@ -1,10 +1,10 @@
 
-var letter = function(letter){
-	this.charac = letter;
+var lets = function(lets){
+	this.charac = lets;
 	this.appear = false;
-	this.letterRender = function(){
+	this.letsRender = function(){
 		return !(this.appear) ? "_" : this.charac;
 	};
 };
 
-module.exports = letter;
+module.exports = lets;
